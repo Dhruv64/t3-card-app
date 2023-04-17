@@ -9,18 +9,20 @@ const CardPreviewPage: NextPage<{ id: string }> = ({ id }) => {
     const { data } = api.cards.getCardById.useQuery({
         id,
     });
+    
     if (!data) return <NotFound404/>;
+    // else console.log(data.card)
     else console.log(data)
 
     return (
         <>
         <Head>
             <title>
-                {data.name}'s card
+                {data.card.name}'s card
             </title>
         </Head>
             <div className="py-4 flex justify-center">
-                <BadgeCard image={data.imgUrl} name={data.name} title={data.title} logo={data.logoUrl} description={data.company} color={""} fields={[]} />
+                <BadgeCard image={data.card.imgUrl} name={data.card.name} title={data.card.title} logo={data.card.logoUrl} description={data.card.company} color={""} fields={data.fields} />
             </div>
         </>
     );
