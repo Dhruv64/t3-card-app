@@ -38,7 +38,7 @@ const Feature: NextPage = () => {
             Turn paper cards into digital cards
           </div>
           <img
-            className="absolute top-[0px] left-[0px] rounded-11xl w-[225px] h-[230px] object-cover"
+            className="absolute top-[0px] left-[20px] rounded-11xl w-[225px] h-[230px] object-cover"
             alt=""
             src="/documentation-1@2x.png"
           />

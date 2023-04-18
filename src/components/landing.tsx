@@ -10,7 +10,7 @@ import Detail1 from "./landingpage/detail1";
 import Feature from "./landingpage/feature";
 import Hero from "./landingpage/hero";
 import Navbar from "./landingpage/navbar";
-
+<style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap');</style>
 const LandingPage: NextPage = () => {
   return (
     <div className="relative bg-darkslateblue w-full h-[6607px] overflow-hidden">

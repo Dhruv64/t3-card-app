@@ -4,11 +4,11 @@ const Hero: NextPage = () => {
   return (
     <div className="absolute top-[0px] left-[0px] w-[1440px] h-[599px] text-center text-5xl text-white font-inter">
       <div className="absolute top-[118px] left-[0px] bg-darkslateblue w-[1440px] h-[466px]" />
-      <img
+      {/* <img
         className="absolute top-[0px] left-[150px] w-[1146px] h-[599px]"
         alt=""
         src="/lines.svg"
-      />
+      /> */}
       {/* <img
         className="absolute h-[8.85%] w-[12.48%] top-[82.22%] right-[34.39%] bottom-[8.93%] left-[53.13%] max-w-full overflow-hidden max-h-full"
         alt=""

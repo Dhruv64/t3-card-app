@@ -1,8 +1,10 @@
 import React from 'react'
+import { ExampleCards } from '~/components/examplecards'
 
 const cards = () => {
   return (
-    <div>cards is working
+    <div>
+    <ExampleCards />
     </div>
   )
 }

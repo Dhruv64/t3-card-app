@@ -7,6 +7,8 @@ import { useState } from "react"
 import { At, MapPin, Phone, Sun } from 'tabler-icons-react'
 import Header from "~/components/Header"
 import ClientOnly from "~/components/client-only"
+import Details from "~/components/details"
+import Topnav from "~/components/topnav"
 
 
 const userinfo = {
@@ -21,6 +23,7 @@ const userinfo = {
     { title: 'Address', description: '844 Morris Park avenue', icon: MapPin },
     { title: 'Working hours', description: '8 a.m. – 11 p.m.', icon: Sun },
   ],
+
 }
 
 
@@ -37,11 +40,12 @@ export default function Home() {
         </h1> */}
 
           <Header />
-
+          <Topnav />
         </div>
         <div className="flex space-x-10 ml-10">
           {/* <NewCard/> */}
           <BadgeCard image={userinfo.image} title={userinfo.title} logo={userinfo.logo} description={userinfo.description} color={userinfo.color} fields={userinfo.fields} name={null} />
+          <Details />
           <Selectors />
           <div>
 
