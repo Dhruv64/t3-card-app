@@ -1,6 +1,8 @@
+
+
 import { createStyles, ThemeIcon, Text, SimpleGrid, Box, Stack } from '@mantine/core';
 import React from 'react';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 type ContactIconVariant = 'white' | 'gradient';
 
 interface ContactIconStyles {
@@ -34,7 +36,7 @@ const useStyles = createStyles((theme, { variant }: ContactIconStyles) => ({
 }));
 
 interface ContactIconProps extends Omit<React.ComponentPropsWithoutRef<'div'>, 'title'> {
-  // icon: React.FC<any>;
+  icon: React.ReactNode;
   type: React.ReactNode;
   entry: React.ReactNode;
   variant?: ContactIconVariant;
@@ -42,7 +44,7 @@ interface ContactIconProps extends Omit<React.ComponentPropsWithoutRef<'div'>, '
 }
 
 function ContactIcon({
-  // icon: Icon,
+  icon,
   type,
   entry,
   link,
@@ -57,6 +59,7 @@ function ContactIcon({
         {variant === 'gradient' ? (
           <ThemeIcon size={40} radius="md" className={classes.icon}>
             {/* <Icon size="1.5rem" /> */}
+            <FontAwesomeIcon icon={"fa-solid fa-"+ icon} />
           </ThemeIcon>
         ) : (
           <Box mr="md">

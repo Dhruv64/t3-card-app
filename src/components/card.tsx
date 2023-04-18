@@ -47,8 +47,9 @@ interface BadgeCardProps {
     color: string | null;
     fields: {
         type: string;
-        link: string | null;
+        link: string | null ;
         entry: string;
+        icon: string;
         // icon: React.FC<any>;
     }[];
 }
