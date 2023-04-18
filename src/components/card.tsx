@@ -12,6 +12,7 @@ import {
     rem,
     CardSection,
 } from '@mantine/core';
+import { type } from 'os';
 
 const useStyles = createStyles((theme) => ({
     card: {
@@ -45,22 +46,32 @@ interface BadgeCardProps {
     description: string | null;
     color: string | null;
     fields: {
-        title: string;
-        description: string;
-        icon: React.FC<any>;
+        type: string;
+        link: string | null ;
+        entry: string;
+        icon: string;
+        // icon: React.FC<any>;
     }[];
 }
 
 export default function BadgeCard({ image, name, title, description, logo, fields, color }: BadgeCardProps) {
     const { classes, theme } = useStyles();
+    // console.log('this is the type of the image' + image)
 
     return (
         <>
             <div className='w-full md:w-2/3 lg:w-1/3'>
                 <Card withBorder radius="md" p="md" className={classes.card}>
-                    <Card.Section>
-                        <Image src={image} height={300} />
-                    </Card.Section>
+                    {(() => {
+                        if (image == null) {
+                            return null
+                        } else return (
+                            <Card.Section>
+                                <Image src={image} height={300} />
+                            </Card.Section>
+                        )
+                    })()}
+
                     <CardSection>
                         <div className={`${color} h-6`}> </div>
                     </CardSection>
@@ -74,7 +85,13 @@ export default function BadgeCard({ image, name, title, description, logo, field
                             <Text fz="lg" fw={500}>
                                 {title}
                             </Text>
-                            <Image src={logo} height={50} width={50} />
+                            {(() => {
+                                if (logo == null) {
+                                    return null
+                                } else return <Image src={logo} height={50} width={50} />
+                            })()}
+
+
                         </Group>
                         <Text fz="sm" mt="xs">
                             {description}

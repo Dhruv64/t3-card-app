@@ -28,22 +28,28 @@ export const cardsRouter = createTRPCRouter({
         }
       });
 
-      if (!card) throw new TRPCError({ code: 'NOT_FOUND' });
-      else return card
-    }),
-
-  getAllFields: publicProcedure
-    .input(z.object({ id: z.string() }))
-    .query(async ({ ctx, input }) => {
-
       const fields = await ctx.prisma.field.findMany({
         where: {
           cardId: input.id
         }
       })
 
-      return fields
+      if (!card) throw new TRPCError({ code: 'NOT_FOUND' });
+      else return {card, fields}
     }),
+
+  // getAllFields: publicProcedure
+  //   .input(z.object({ id: z.string() }))
+  //   .query(async ({ ctx, input }) => {
+
+  //     const fields = await ctx.prisma.field.findMany({
+  //       where: {
+  //         cardId: input.id
+  //       }
+  //     })
+
+  //     return fields
+  //   }),
 
   //   getAll: publicProcedure.query(({ ctx }) => {
   //   return ctx.prisma.card.findMany();

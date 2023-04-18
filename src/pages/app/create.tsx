@@ -18,10 +18,10 @@ const userinfo = {
   logo: 'https://cdn.logo.com/hotlink-ok/logo-social.png',
   color: 'bg-red-200',
   fields: [
-    { title: 'Email', description: 'hello@mantine.dev', icon: At },
-    { title: 'Phone', description: '+49 (800) 335 35 35', icon: Phone },
-    { title: 'Address', description: '844 Morris Park avenue', icon: MapPin },
-    { title: 'Working hours', description: '8 a.m. – 11 p.m.', icon: Sun },
+    { type: 'Email', entry: 'hello@mantine.dev', icon:'at' },
+    { type: 'Phone', entry: '+49 (800) 335 35 35', icon: 'phone' },
+    { type: 'Address', entry: '844 Morris Park avenue', icon: 'map-pin' },
+    { type: 'Working hours', entry: '8 a.m. – 11 p.m.', icon: 'phone'},
   ],
 
 }
@@ -29,7 +29,7 @@ const userinfo = {
 
 
 export default function Home() {
-
+  console.log(userinfo.fields)
 
   return (
     <>

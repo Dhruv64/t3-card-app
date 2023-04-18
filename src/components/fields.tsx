@@ -1,5 +1,8 @@
-import { createStyles, ThemeIcon, Text, SimpleGrid, Box, Stack } from '@mantine/core';
 
+
+import { createStyles, ThemeIcon, Text, SimpleGrid, Box, Stack } from '@mantine/core';
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 type ContactIconVariant = 'white' | 'gradient';
 
 interface ContactIconStyles {
@@ -17,57 +20,61 @@ const useStyles = createStyles((theme, { variant }: ContactIconStyles) => ({
     marginRight: theme.spacing.md,
     backgroundImage:
       variant === 'gradient'
-        ? `linear-gradient(135deg, ${theme.colors[theme.primaryColor][4]} 0%, ${
-            theme.colors[theme.primaryColor][6]
-          } 100%)`
+        ? `linear-gradient(135deg, ${theme.colors[theme.primaryColor][4]} 0%, ${theme.colors[theme.primaryColor][6]
+        } 100%)`
         : 'none',
     backgroundColor: 'transparent',
   },
 
-  title: {
+  type: {
     color: variant === 'gradient' ? theme.colors.gray[6] : theme.colors[theme.primaryColor][0],
   },
 
-  description: {
+  entry: {
     color: variant === 'gradient' ? theme.black : theme.white,
   },
 }));
 
 interface ContactIconProps extends Omit<React.ComponentPropsWithoutRef<'div'>, 'title'> {
-  icon: React.FC<any>;
-  title: React.ReactNode;
-  description: React.ReactNode;
+  icon: React.ReactNode;
+  type: React.ReactNode;
+  entry: React.ReactNode;
   variant?: ContactIconVariant;
+  link?: React.ReactNode;
 }
 
 function ContactIcon({
-  icon: Icon,
-  title,
-  description,
+  icon,
+  type,
+  entry,
+  link,
   variant = 'gradient',
   className,
   ...others
 }: ContactIconProps) {
   const { classes, cx } = useStyles({ variant });
   return (
-    <div className={cx(classes.wrapper, className)} {...others}>
-      {variant === 'gradient' ? (
-        <ThemeIcon size={40} radius="md" className={classes.icon}>
-          <Icon size="1.5rem" />
-        </ThemeIcon>
-      ) : (
-        <Box mr="md">
-          <Icon size="1.5rem" />
-        </Box>
-      )}
+    <a href={link}>
+      <div className={cx(classes.wrapper, className)} {...others}>
+        {variant === 'gradient' ? (
+          <ThemeIcon size={40} radius="md" className={classes.icon}>
+            {/* <Icon size="1.5rem" /> */}
+            <FontAwesomeIcon icon={"fa-solid fa-"+ icon} />
+          </ThemeIcon>
+        ) : (
+          <Box mr="md">
+            {/* <Icon size="1.5rem" /> */}
+          </Box>
+        )}
 
-      <div>
-        <Text size="xs" className={classes.title} >
-          {title}
-        </Text>
-        <Text className={classes.description}>{description}</Text>
+        <div>
+          <Text size="xs" className={classes.type} >
+            {type}
+          </Text>
+          <Text className={classes.entry}>{entry}</Text>
+        </div>
       </div>
-    </div>
+    </a>
   );
 }
 
@@ -77,13 +84,13 @@ interface ContactIconsListProps {
 }
 
 // const MOCKDATA = [
-//   { title: 'Email', description: 'hello@mantine.dev', icon: At },
-//   { title: 'Phone', description: '+49 (800) 335 35 35', icon: Phone },
-//   { title: 'Address', description: '844 Morris Park avenue', icon: MapPin },
-//   { title: 'Working hours', description: '8 a.m. – 11 p.m.', icon: Sun },
+//   { type: 'Email', entry: 'hello@mantine.dev', icon: At },
+//   { type: 'Phone', entry: '+49 (800) 335 35 35', icon: Phone },
+//   { type: 'Address', entry: '844 Morris Park avenue', icon: MapPin },
+//   { type: 'Working hours', entry: '8 a.m. – 11 p.m.', icon: Sun },
 // ];
 
-export default function ContactIconsList({ data , variant }: ContactIconsListProps) {
+export default function ContactIconsList({ data, variant }: ContactIconsListProps) {
   const items = data.map((item, index) => <ContactIcon key={index} variant={variant} {...item} />);
   return <Stack>{items}</Stack>;
 }
@@ -105,9 +112,8 @@ export function ContactIcons() {
         sx={(theme) => ({
           padding: theme.spacing.xl,
           borderRadius: theme.radius.md,
-          backgroundImage: `linear-gradient(135deg, ${theme.colors[theme.primaryColor][6]} 0%, ${
-            theme.colors[theme.primaryColor][4]
-          } 100%)`,
+          backgroundImage: `linear-gradient(135deg, ${theme.colors[theme.primaryColor][6]} 0%, ${theme.colors[theme.primaryColor][4]
+            } 100%)`,
         })}
       >
         <ContactIconsList variant="white" />
