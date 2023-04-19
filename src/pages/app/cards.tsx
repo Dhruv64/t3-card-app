@@ -1,7 +1,7 @@
 import React from 'react'
 import { ExampleCards } from '~/components/examplecards'
 
-const cards = () => {
+const Cards = () => {
   return (
     <div>
     <ExampleCards />
@@ -9,4 +9,4 @@ const cards = () => {
   )
 }
 
-export default cards
+export default Cards
