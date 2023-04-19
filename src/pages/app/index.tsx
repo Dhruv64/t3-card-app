@@ -1,4 +1,5 @@
 import React from 'react'
+import Header from '~/components/Header';
 import { ExampleCards } from '~/components/examplecards';
 import { useSession } from 'next-auth/react';
 import LandingPage from '~/components/landing';
@@ -10,10 +11,14 @@ const index = () => {
   const { data: session, status } = useSession();
 
   let landing = (
-    <div className='landingPage'></div>
+    <div className='landingPage'>
+      {/* <LandingPage /> */}
+    </div>
   ) 
   let app = (
-    <div className='appPage'></div>
+    <div className='appPage'>
+      {/* <ExampleCards /> */}
+    </div>
   )
 
   if (!session) {
@@ -35,10 +40,9 @@ const index = () => {
   return (
 
     <div>
-      <Topnav />
       {landing}
-      {app}
-      
+      <Header />
+      <Topnav />
       {/* <ExampleCards /> */}
 
     </div>

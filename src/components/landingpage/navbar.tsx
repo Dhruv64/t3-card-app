@@ -12,7 +12,7 @@ const Navbar: NextPage = () => {
         src="/company-logo.svg"
       />
       <b className="absolute top-[13px] -left-[5%]  text-5xl leading-[100%]">
-        Card Genius
+        Digital Card
       </b>
       <b className="absolute w-[4.94%] top-[26%] left-[58.03%] leading-[100%] text-xl inline-block">
         Blog
@@ -27,7 +27,7 @@ const Navbar: NextPage = () => {
       </div>
       <div className="absolute h-[84%] w-[16.61%] top-[8%] right-[0%] bottom-[8%] left-[90%]">
         <div className="absolute h-full w-full top-[0%] right-[0%] bottom-[0%] left-[0%] rounded-3xs bg-limegreen" />
-        <b className="absolute top-[21.43%] left-[8%] leading-[100%] tex">
+        <b className="absolute top-[21.43%] left-[8%] leading-[100%]">
           Create a Card
         </b>
       </div>
