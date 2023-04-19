@@ -9,7 +9,7 @@ import Header from "~/components/Header"
 import ClientOnly from "~/components/client-only"
 import Details from "~/components/details"
 import Topnav from "~/components/topnav"
-
+import Form from "~/components/form"
 
 const userinfo = {
   image: 'https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png',
@@ -21,7 +21,7 @@ const userinfo = {
     { type: 'Email', entry: 'hello@mantine.dev', icon:'at' },
     { type: 'Phone', entry: '+49 (800) 335 35 35', icon: 'phone' },
     { type: 'Address', entry: '844 Morris Park avenue', icon: 'map-pin' },
-    { type: 'Working hours', entry: '8 a.m. – 11 p.m.', icon: 'phone'},
+    { type: 'Working hours', entry: '8 a.m. - 11 p.m.', icon: 'phone'},
   ],
 
 }
@@ -39,19 +39,22 @@ export default function Home() {
           Hello world!
         </h1> */}
 
-          <Header />
           <Topnav />
+          {/* <Header /> */}
         </div>
         <div className="flex space-x-10 ml-10">
           {/* <NewCard/> */}
           <BadgeCard image={userinfo.image} title={userinfo.title} logo={userinfo.logo} description={userinfo.description} color={userinfo.color} fields={userinfo.fields} name={null} />
-          <Details />
+          
+          
           <Selectors />
           <div>
 
           </div>
 
         </div>
+        {/* <Form /> */}
+        <Details />
       </ClientOnly>
     </>
   )

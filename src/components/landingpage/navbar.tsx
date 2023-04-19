@@ -12,7 +12,7 @@ const Navbar: NextPage = () => {
         src="/company-logo.svg"
       />
       <b className="absolute top-[13px] -left-[5%]  text-5xl leading-[100%]">
-        Digital Card
+        Card Genius
       </b>
       <b className="absolute w-[4.94%] top-[26%] left-[58.03%] leading-[100%] text-xl inline-block">
         Blog

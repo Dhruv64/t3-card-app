@@ -21,7 +21,7 @@ const Detail1: NextPage = () => {
             Android, or computer and can be completely customized to fit your
             style.
           </div>
-          <div className="absolute top-[0px] left-[0px] text-45xl inline-block w-[564.74px] [text-shadow:0px_4px_4px_rgba(0,_0,_0,_0.25)]">
+          <div className="absolute top-[0px] left-[0px] text-45xl inline-block w-[564.74px] leading-normal [text-shadow:0px_4px_4px_rgba(0,_0,_0,_0.25)]">
             What is a digital business card?
           </div>
         </div>
