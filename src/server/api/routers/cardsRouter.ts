@@ -38,24 +38,17 @@ export const cardsRouter = createTRPCRouter({
       else return {card, fields}
     }),
 
-  // getAllFields: publicProcedure
-  //   .input(z.object({ id: z.string() }))
-  //   .query(async ({ ctx, input }) => {
 
-  //     const fields = await ctx.prisma.field.findMany({
-  //       where: {
-  //         cardId: input.id
-  //       }
-  //     })
+  getCardsByUserId: protectedProcedure
+  .query(async ({ ctx }) => {
+    const Id = ctx.session.user.id
+    const cards = await ctx.prisma.card.findMany({
+      where: {
+        userId: Id
+      }
+    });
 
-  //     return fields
-  //   }),
-
-  //   getAll: publicProcedure.query(({ ctx }) => {
-  //   return ctx.prisma.card.findMany();
-  // }),
-
-  getSecretMessage: protectedProcedure.query(() => {
-    return "you can now see this secret message!";
+    if (!Id) throw new TRPCError({ code: 'NOT_FOUND' });
+    else return cards
   }),
 });

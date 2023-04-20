@@ -1,5 +1,5 @@
 import React from 'react'
-import { ExampleCards } from '~/components/examplecards'
+import { ExampleCards } from '~/components/userCards'
 
 const cards = () => {
   return (
