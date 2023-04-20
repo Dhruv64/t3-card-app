@@ -32,7 +32,7 @@ const CardPreviewPage: NextPage<{ id: string }> = ({ id }) => {
         </>
     );
 };
-// select id from card
+
 export const getStaticProps: GetStaticProps = async (context) => {
     const ssg = generateSSGHelper();
 
