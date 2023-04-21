@@ -83,7 +83,7 @@ const index = () => {
         } else return (
           <Container py="xl">
           <SimpleGrid cols={3} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
-            <Card p={'xs'} radius="md" component="a" href='/app/create' className={`border-dashed border ${classes.createCard}`} >
+            <Card p={'xs'} radius="md" component="a" href='/app/new' className={`border-dashed border ${classes.createCard}`} >
               <div>
                 <span className='text-77xl font-thin mx-14'>+</span><br></br>
                 <span className='font-[350] mx-10'>Create a card</span>
