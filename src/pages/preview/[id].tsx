@@ -18,11 +18,11 @@ const CardPreviewPage: NextPage<{ id: string }> = ({ id }) => {
         <>
             <Head>
                 <title>
-                    {data.card.name}'s card
+                    {data.name}'s card
                 </title>
             </Head>
             <div className="py-4 flex justify-center">
-                <BadgeCard image={data.card.imgUrl} name={data.card.name} title={data.card.title} logo={data.card.logoUrl} description={data.card.company} color={""} fields={data.fields} />
+                <BadgeCard image={data.imgUrl} name={data.name} title={data.title} logo={data.logoUrl} company={data.company} color={""} phone={data.phone} email={data.email} address={data.address} websitelink={data.websitelink} link={data.link} github={data.github} twitter={data.twitter} instagram={data.instagram} linkedin={data.linkedin} facebook={data.facebook} youtube={data.youtube} whatsapp={data.whatsapp}  />
             </div>
             <div className="flex justify-center">
                 <div>

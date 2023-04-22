@@ -78,7 +78,7 @@ const CardSharePage: NextPage<{ id: string }> = ({ id }) => {
     const { data } = api.cards.getCardById.useQuery({
         id,
     });
-    const url = `localhost.3000/preview/${data?.card.id}`
+    const url = `localhost.3000/preview/${data?.id}`
 
     const { data: session } = useSession()
 
@@ -90,16 +90,16 @@ const CardSharePage: NextPage<{ id: string }> = ({ id }) => {
     return (
         <>
             {(() => {
-                if (session?.user.id == data.card.userId) {
+                if (session?.user.id == data.userId) {
                     return (
                         <>
                             <Head>
                                 <title>
-                                    {data.card.name}'s card
+                                    {data.name}'s card
                                 </title>
                             </Head>
                             <div className="md:py-4 flex justify-evenly">
-                                <BadgeCard image={data.card.imgUrl} name={data.card.name} title={data.card.title} logo={data.card.logoUrl} description={data.card.company} color={""} fields={data.fields} />
+                            <BadgeCard image={data.imgUrl} name={data.name} title={data.title} logo={data.logoUrl} company={data.company} color={""} phone={data.phone} email={data.email} address={data.address} websitelink={data.websitelink} link={data.link} github={data.github} twitter={data.twitter} instagram={data.instagram} linkedin={data.linkedin} facebook={data.facebook} youtube={data.youtube} whatsapp={data.whatsapp}  />
 
                                 <div>
                                     <Card withBorder radius="md" padding="lg" className={classes.card}>
